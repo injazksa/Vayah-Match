@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { getSupabaseClient } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/button';
@@ -7,7 +7,15 @@ import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { ArrowRight, Send, Loader2, MessageCircle } from 'lucide-react';
 
-export default function MessagesPage() {
+export default function MessagesPageWrapper() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><Loader2 className="w-8 h-8 animate-spin text-accent"/></div>}>
+      <MessagesPage />
+    </Suspense>
+  );
+}
+
+function MessagesPage() {
   const router = useRouter();
   const params = useSearchParams();
   const targetId = params.get('to');
