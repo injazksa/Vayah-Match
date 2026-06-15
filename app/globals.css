@@ -1,141 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
-}
-
-.App {
-    text-align: center;
-}
-
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-
-
 @layer base {
   :root {
-        --background: 0 0% 100%;
-        --foreground: 222.2 84% 4.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 222.2 84% 4.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 222.2 84% 4.9%;
-        --primary: 222.2 47.4% 11.2%;
-        --primary-foreground: 210 40% 98%;
-        --secondary: 210 40% 96.1%;
-        --secondary-foreground: 222.2 47.4% 11.2%;
-        --muted: 210 40% 96.1%;
-        --muted-foreground: 215.4 16.3% 46.9%;
-        --accent: 210 40% 96.1%;
-        --accent-foreground: 222.2 47.4% 11.2%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 210 40% 98%;
-        --border: 214.3 31.8% 91.4%;
-        --input: 214.3 31.8% 91.4%;
-        --ring: 222.2 84% 4.9%;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
-        --radius: 0.5rem;
-        --sidebar-background: 0 0% 98%;
-        --sidebar-foreground: 240 5.3% 26.1%;
-        --sidebar-primary: 240 5.9% 10%;
-        --sidebar-primary-foreground: 0 0% 98%;
-        --sidebar-accent: 240 4.8% 95.9%;
-        --sidebar-accent-foreground: 240 5.9% 10%;
-        --sidebar-border: 220 13% 91%;
-        --sidebar-ring: 217.2 91.2% 59.8%;
-    }
+    /* Quiet Luxury - فحمي دافئ + كريمي ناعم + ذهبي */
+    --background: 35 30% 95%;            /* كريمي ناعم #F5EFE4 */
+    --foreground: 30 13% 10%;            /* فحمي دافئ #1C1A17 */
+    --card: 35 30% 98%;
+    --card-foreground: 30 13% 10%;
+    --popover: 35 30% 98%;
+    --popover-foreground: 30 13% 10%;
+    --primary: 30 13% 10%;               /* الفحمي للأزرار */
+    --primary-foreground: 35 30% 95%;
+    --secondary: 35 25% 88%;
+    --secondary-foreground: 30 13% 15%;
+    --muted: 35 20% 90%;
+    --muted-foreground: 30 10% 40%;
+    --accent: 40 50% 58%;                /* الذهبي #C9A961 */
+    --accent-foreground: 30 13% 10%;
+    --destructive: 0 65% 35%;
+    --destructive-foreground: 35 30% 95%;
+    --border: 35 15% 80%;
+    --input: 35 15% 85%;
+    --ring: 40 50% 58%;
+    --radius: 0.75rem;
+    --gold: 40 50% 58%;
+    --gold-foreground: 30 13% 10%;
+  }
+
   .dark {
-        --background: 222.2 84% 4.9%;
-        --foreground: 210 40% 98%;
-        --card: 222.2 84% 4.9%;
-        --card-foreground: 210 40% 98%;
-        --popover: 222.2 84% 4.9%;
-        --popover-foreground: 210 40% 98%;
-        --primary: 210 40% 98%;
-        --primary-foreground: 222.2 47.4% 11.2%;
-        --secondary: 217.2 32.6% 17.5%;
-        --secondary-foreground: 210 40% 98%;
-        --muted: 217.2 32.6% 17.5%;
-        --muted-foreground: 215 20.2% 65.1%;
-        --accent: 217.2 32.6% 17.5%;
-        --accent-foreground: 210 40% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 210 40% 98%;
-        --border: 217.2 32.6% 17.5%;
-        --input: 217.2 32.6% 17.5%;
-        --ring: 212.7 26.8% 83.9%;
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
-        --sidebar-background: 240 5.9% 10%;
-        --sidebar-foreground: 240 4.8% 95.9%;
-        --sidebar-primary: 224.3 76.3% 48%;
-        --sidebar-primary-foreground: 0 0% 100%;
-        --sidebar-accent: 240 3.7% 15.9%;
-        --sidebar-accent-foreground: 240 4.8% 95.9%;
-        --sidebar-border: 240 3.7% 15.9%;
-        --sidebar-ring: 217.2 91.2% 59.8%;
-    }
+    --background: 30 13% 8%;
+    --foreground: 35 30% 92%;
+    --card: 30 13% 12%;
+    --card-foreground: 35 30% 92%;
+    --popover: 30 13% 12%;
+    --popover-foreground: 35 30% 92%;
+    --primary: 40 50% 58%;
+    --primary-foreground: 30 13% 10%;
+    --secondary: 30 10% 16%;
+    --secondary-foreground: 35 30% 92%;
+    --muted: 30 10% 18%;
+    --muted-foreground: 35 15% 65%;
+    --accent: 40 50% 58%;
+    --accent-foreground: 30 13% 10%;
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 35 30% 92%;
+    --border: 30 10% 22%;
+    --input: 30 10% 20%;
+    --ring: 40 50% 58%;
+  }
 }
-
-
 
 @layer base {
-  * {
-    @apply border-border;
-    }
+  * { @apply border-border; }
+  html { font-family: 'Tajawal', sans-serif; }
   body {
     @apply bg-background text-foreground;
-    }
+    font-family: 'Tajawal', system-ui, sans-serif;
+    font-feature-settings: "liga" 1, "calt" 1, "kern" 1;
+  }
+  h1,h2,h3,h4 { font-family: 'Tajawal', sans-serif; letter-spacing: -0.01em; }
 }
+
+@layer components {
+  .luxury-gradient {
+    background: linear-gradient(135deg, #1C1A17 0%, #2A2520 60%, #3A2F22 100%);
+  }
+  .gold-text {
+    background: linear-gradient(135deg, #D4B673 0%, #C9A961 50%, #A0843D 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gold-border {
+    border: 1px solid rgba(201, 169, 97, 0.4);
+  }
+  .glass-card {
+    background: rgba(245, 239, 228, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .premium-shadow {
+    box-shadow: 0 8px 40px -8px rgba(28,26,23,0.18), 0 2px 8px rgba(28,26,23,0.06);
+  }
+  .gold-glow {
+    box-shadow: 0 0 0 1px rgba(201,169,97,0.5), 0 0 30px -5px rgba(201,169,97,0.4);
+  }
+  .face-frame-overlay {
+    background: radial-gradient(circle at center, transparent 0%, transparent 35%, rgba(28,26,23,0.85) 35%, rgba(28,26,23,0.95) 100%);
+  }
+  .gradient-charcoal { background: linear-gradient(135deg,#1C1A17,#2A2520); }
+  .gradient-burgundy { background: linear-gradient(135deg,#3D1418,#5B1A1A); }
+  .gradient-emerald  { background: linear-gradient(135deg,#0E2E22,#1A4332); }
+  .gradient-navy     { background: linear-gradient(135deg,#0A1A2E,#162A43); }
+  .gradient-rose     { background: linear-gradient(135deg,#3D2429,#5B2A2F); }
+  .gradient-gold     { background: linear-gradient(135deg,#9C7B2E,#C9A961); }
+  .online-dot {
+    box-shadow: 0 0 0 3px rgba(34,197,94,0.25), 0 0 10px rgba(34,197,94,0.6);
+    animation: pulse-online 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-online {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.92); }
+}
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fadein { animation: fadein 0.5s ease-out; }
+
+/* RTL scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(201,169,97,0.3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(201,169,97,0.5); }
+
+/* دعم RTL للإدخالات */
+input, textarea, select { text-align: right; }
