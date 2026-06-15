@@ -81,16 +81,24 @@
 
 ---
 
-## 🔑 المفاتيح المُحفوظة في `.env`
+## 🔑 متغيرات البيئة المطلوبة
+
+⚠️ **لا تضع المفاتيح الحقيقية في الـ Git أبداً!** القيم الفعلية محفوظة محلياً في `/app/.env` (مُدرج في `.gitignore`).
+
+انسخ `.env.example` إلى `.env.local` (على Vercel: أضفها في Environment Variables):
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://fwhfllbdqfxgprhqibdb.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_2YjVWH1XYVP8eIQm3CxJjw_lmJef8Pc
-SUPABASE_SERVICE_ROLE_KEY=sb_secret_tqb9sjTmhqKnvcDZ6hJGOQ_x1INRrXM
-GEMINI_API_KEY=AQ.Ab8RN6I6Z-2DGZv-Kg5gqFEaUpT-LSWC0ejoV7lN8OVIZ9_5zg
+NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_xxxxx
+SUPABASE_SERVICE_ROLE_KEY=sb_secret_xxxxx
+GEMINI_API_KEY=your_gemini_api_key
 SUPER_ADMIN_EMAIL=admin@vayah.com
-SUPER_ADMIN_PASSWORD=VayahAdmin2026!Master
+SUPER_ADMIN_PASSWORD=YourStrongPassword
 ```
+
+من أين تحصل عليها:
+- Supabase: [Dashboard → Settings → API](https://supabase.com/dashboard)
+- Gemini: [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
 
 ---
 
