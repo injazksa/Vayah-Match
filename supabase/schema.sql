@@ -153,7 +153,7 @@ BEGIN
     NEW.id, 
     NEW.email,
     CASE 
-      WHEN NEW.email = 'admin@vayah.com' THEN 'super_admin'::user_role_enum
+      WHEN NEW.email = 'Abdallhsmj@gmail.com' THEN 'super_admin'::user_role_enum
       ELSE 'user'::user_role_enum
     END
   )
